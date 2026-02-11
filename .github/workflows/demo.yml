@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: single line comment
-        run: echo "Welcome to GithubActions"
+        run: echo "Welcome to GithubActions" 
       
       - name: multiline comment
         run: |
