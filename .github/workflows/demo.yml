@@ -9,4 +9,10 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "Welcome to GithubActions"
+      - name: single line comment
+        run: echo "Welcome to GithubActions"
+      
+      - name: multiline comment
+        run: |
+          echo "Welcome to multline comment"
+          echo "This is for demo purpose only"
