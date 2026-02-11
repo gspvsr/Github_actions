@@ -26,6 +26,7 @@ jobs:
           echo "Welcome to multline comment"
           echo "This is for demo purpose only"
           echo "hello $Greeting is using $cloud with ${{ vars.PROJECT_ID }}"
+          echo "my secret value is ${{ secrets.MY_KEY }}"
       
-      - name: Dump all github context
-        run: echo '${{ toJson(github) }}'
+      # - name: Dump all github context
+      #   run: echo '${{ toJson(github) }}'
