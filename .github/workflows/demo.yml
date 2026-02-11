@@ -1,12 +1,12 @@
 name: my_frist_githubaction_pipeline
 
-# on:
-#   push:
-#     branches:
-#       - main
-
 on:
-  workflow_dispatch
+  push:
+    branches:
+      - main
+
+# on:
+#   workflow_dispatch
 
 env:
   cloud: google-cloud
@@ -24,4 +24,4 @@ jobs:
         run: |
           echo "Welcome to multline comment"
           echo "This is for demo purpose only"
-          echo "hello $Greetings is using $cloud"
+          echo "hello $Greeting is using $cloud"
