@@ -22,6 +22,10 @@ jobs:
         
       - name: multiline comment
         run: |
+          echo "repository name: ${{ github.repository }}"
           echo "Welcome to multline comment"
           echo "This is for demo purpose only"
           echo "hello $Greeting is using $cloud with ${{ vars.PROJECT_ID }}"
+      
+      - name: Dump all github context
+        run: echo '${{ toJson(github) }}'
