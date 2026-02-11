@@ -14,12 +14,12 @@ env:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    env:
+          Greeting: santh
     steps:
       - name: single line comment
         run: echo "Welcome to GithubActions" 
-        env:
-          Greeting: santh
-      
+        
       - name: multiline comment
         run: |
           echo "Welcome to multline comment"
