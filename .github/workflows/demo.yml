@@ -1,12 +1,12 @@
-name: my_first_work
+name: my_frist_githubaction_pipeline
 
 on:
- push:
-   branches: 
-    - main
+  push:
+    branches:
+      - main
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "Welcome to FANUC"
+      - run: echo "Welcome to GithubActions"
