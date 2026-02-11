@@ -17,9 +17,11 @@ jobs:
     steps:
       - name: single line comment
         run: echo "Welcome to GithubActions" 
+        env:
+          Greeting: santh
       
       - name: multiline comment
         run: |
           echo "Welcome to multline comment"
           echo "This is for demo purpose only"
-          echo "run variables in $cloud"
+          echo "hello $Greetings is using $cloud"
