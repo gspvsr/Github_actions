@@ -24,4 +24,4 @@ jobs:
         run: |
           echo "Welcome to multline comment"
           echo "This is for demo purpose only"
-          echo "hello $Greeting is using $cloud"
+          echo "hello $Greeting is using $cloud with ${{ vars.PROJECT_ID }}"
