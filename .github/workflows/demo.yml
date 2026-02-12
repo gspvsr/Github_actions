@@ -1,10 +1,12 @@
 name: my_first_workflow
 
 on:
-  push:
-    branches:
-      - main
-  pull_request:
+  workflow_dispatch:
+    inputs:
+      action:
+        description: 'Choose Terraform action: apply or destroy'
+        required: true
+        default: apply
 
 jobs:
   terraform:
@@ -23,7 +25,7 @@ jobs:
         uses: hashicorp/setup-terraform@v3
         with:
           terraform_version: 1.14.4
-      
+
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
@@ -39,13 +41,15 @@ jobs:
 
       - name: Terraform Validate
         run: terraform validate
-      
+
       - name: Terraform Plan
         run: terraform plan -input=false
-      
-      - name: Terraform Apply
-        run: terraform apply -auto-approve
 
-      - name: Terraform Destroy
-        if: github.event_name == 'workflow_dispatch' # optional: run only on manual trigger
-        run: terraform destroy -auto-approve
+      - name: Terraform Apply or Destroy
+        run: |
+          if [[ "${{ github.event.inputs.action }}" == "destroy" ]]; then
+            echo "Running terraform destroy..."
+            terraform destroy -auto-approve
+          else
+            echo "Running terraform apply..."
+            terraform apply -auto-approve
