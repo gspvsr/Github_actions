@@ -30,9 +30,3 @@ jobs:
 # Add additional steps here to perform actions withinyour workflow.
 
 - run: echo "Hello, world! This is a simple Gitub Actions workflow." 
-
-Variable Notes:
-- if we are using variables in workflow, we need to  mention env. and use $ symble.
-- if we are using configuration variable, then we need to use ${{ vars.PROJECT_ID }}
-- context variables from metadata.
-
