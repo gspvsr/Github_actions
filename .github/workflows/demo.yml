@@ -13,6 +13,14 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - name: aws_credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRETE_ACCESS_KEY_ID }}
+          aws-region: us-east-1
+
+
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v3
 
