@@ -1,0 +1,23 @@
+name: github_action_demo
+
+on:
+    workflow_dispatch:
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        steps:
+          - name: Download the the Artifacts
+            run: echo artificts are downloaded here
+    
+    test:
+        runs-on: ubuntu-latest
+        steps:
+            - name: testing the artifact here
+              run: echo testing done here
+
+    deploy:
+        runs-on: ubuntu-latest
+        steps:
+            - name: deploying the application
+              run: echo deploying done
