@@ -19,4 +19,6 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: deploying the application
-              run: echo deploying done
+              run: |
+                echo secrets are displaing here
+                echo ${{ secrets.DOCKER_PASSWORD }}
