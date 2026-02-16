@@ -1,24 +1,12 @@
-name: github_action_demo
+name: Github Action Demo
 
 on: push
 
 jobs:
-    build:
-        runs-on: ubuntu-latest
-        steps:
-          - name: Download the the Artifacts
-            run: echo artificts are downloaded here
-    
-    test:
-        runs-on: ubuntu-latest
-        steps:
-            - name: testing the artifact here
-              run: echo testing done here
-
-    deploy:
-        runs-on: ubuntu-latest
-        steps:
-            - name: deploying the application
-              run: |
-                echo secrets are displaing here
-                echo ${{ secrets.DOCKER_PASSWORD }}
+   action-demo:
+     runs-on: ubuntu-latest
+     steps:
+      - name: Checkout the code
+        uses: actions/checkout@v4
+      - name: Print index.html file
+        run: cat index.html
